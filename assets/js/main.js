@@ -261,4 +261,26 @@
     })
   });
 
+  const skills = [
+    {skill:'HTML',value:100},
+    {skill:'CSS (SASS)',value:90},
+    {skill:'JavaScript (Vanilla JS, Vue, NodeJs)',value:80},
+    {skill:'Drupal',value:40},
+    {skill:'Laravel',value:90},
+    {skill:'Database(MySQL, MSSQL)',value:80},
+  ];
+
+  const skillEl = skills.map(el => {
+  return `    <div class="progress">
+                  <span class="skill">${el.skill}<i class="val">${el.value}%</i></span>
+                  <div class="progress-bar-wrap">
+                    <div class="progress-bar" role="progressbar" aria-valuenow="${el.value}" aria-valuemin="0" aria-valuemax="100"></div>
+                  </div>
+                </div>`;
+  });
+
+  document.querySelector('.skills-content').children[0].insertAdjacentHTML('afterbegin',skillEl.slice(0,3).join(''));
+  document.querySelector('.skills-content').children[1].insertAdjacentHTML('afterbegin',skillEl.slice(3,6).join(''));
+
+
 })()
